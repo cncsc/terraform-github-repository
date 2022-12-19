@@ -1,11 +1,11 @@
 {
-  "name": "@cncsc/terraform",
+  "name": "@cncsc/template-terraform-module",
   "version": "0.0.0-development",
-  "description": "Contains modules for deploying and managing GitHub repositories.",
+  "description": "{{module_description}}",
   "main": "main.tf",
   "repository": {
     "type": "git",
-    "url": "git@github.com:cncsc/terraform.git"
+    "url": "git@github.com:cncsc/template-terraform-module.git"
   },
   "author": {
     "name": "Cloud-Native Cybersecurity Collective",

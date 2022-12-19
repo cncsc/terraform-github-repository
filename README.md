@@ -10,7 +10,7 @@
 [![License][license_badge_image]][license_badge_link]
 [![Maintained by Armor][maintainer_badge_image]][maintainer_badge_link]
 
-This repository contains modules for deploying and managing GitHub repositories.
+{{module_description}}
 
 [ci_badge_image]:https://img.shields.io/github/actions/workflow/status/cncsc/template-terraform-module/ci.yaml?branch=main&label=ci&logo=github
 [ci_badge_link]:https://github.com/cncsc/template-terraform-module/actions/workflows/ci.yaml
