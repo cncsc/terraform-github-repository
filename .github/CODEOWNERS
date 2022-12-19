@@ -1,0 +1,3 @@
+.github/CODEOWNERS @cncsc/security-reviewers
+.github/workflows/* @cncsc/devops-reviewers @cncsc/conventions-reviewers
+* @cncsc/infrastructure-reviewers
