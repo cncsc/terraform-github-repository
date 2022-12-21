@@ -105,7 +105,7 @@ resource "github_branch_default" "default" {
 # ---------------------------------------------------------------------------------------------------------------------
 
 module "pull_teams" {
-  for_each = var.read_teams
+  for_each = var.pull_teams
 
   source = "./modules/team-repository"
 
@@ -119,7 +119,7 @@ module "pull_teams" {
 # ---------------------------------------------------------------------------------------------------------------------
 
 module "push_teams" {
-  for_each = var.write_teams
+  for_each = var.push_teams
 
   source = "./modules/team-repository"
 

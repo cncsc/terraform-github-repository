@@ -136,13 +136,13 @@ variable "archived" {
   default     = false
 }
 
-variable "read_teams" {
+variable "pull_teams" {
   description = "A set of teams allowed to pull this repository."
   type        = set(string)
   default     = []
 }
 
-variable "write_teams" {
+variable "push_teams" {
   description = "A set of team IDs allowed to push to this repository."
   type        = set(string)
   default     = []
@@ -150,12 +150,6 @@ variable "write_teams" {
 
 variable "admin_teams" {
   description = "A set of team IDs allowed to administer this repository."
-  type        = set(string)
-  default     = []
-}
-
-variable "admin_users" {
-  description = "A set of GitHub users' IDs allowed to admin this repository."
   type        = set(string)
   default     = []
 }
@@ -171,6 +165,13 @@ variable "push_users" {
   type        = set(string)
   default     = []
 }
+
+variable "admin_users" {
+  description = "A set of GitHub users' IDs allowed to admin this repository."
+  type        = set(string)
+  default     = []
+}
+
 
 variable "is_template" {
   description = "Whether or not this repository is a template repository."
