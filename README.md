@@ -106,7 +106,7 @@ This repository contains modules for deploying and managing GitHub repositories.
 [cd_badge_image]:https://img.shields.io/github/actions/workflow/status/cncsc/terraform-github-repository/cd.yaml?branch=main&label=cd&logo=github
 [cd_badge_link]:https://github.com/cncsc/terraform-github-repository/actions/workflows/cd.yaml
 [release_badge_image]:https://img.shields.io/github/v/release/cncsc/terraform-github-repository?logo=terraform
-[release_badge_link]:https://registry.terraform.io/modules/cncsc/group/azuread/latest
+[release_badge_link]:https://registry.terraform.io/modules/cncsc/repository/github/latest
 [license_badge_image]:https://img.shields.io/github/license/cncsc/terraform-github-repository
 [license_badge_link]:./LICENSE
 [maintainer_badge_image]:https://img.shields.io/badge/maintainer-Armor-f60
