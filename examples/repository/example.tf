@@ -4,7 +4,7 @@ terraform {
   required_providers {
     github = {
       source  = "integrations/github"
-      version = ">= 5.7.0"
+      version = ">= 5.12.0"
     }
   }
 }
@@ -19,11 +19,11 @@ module "github_repository" {
   name        = "terratest-example-repository"
   description = "An example repository used for testing Terraform-based deployments of a GitHub repository."
 
-  read_teams = [
+  pull_teams = [
     "infrastructure-reviewers"
   ]
 
-  write_teams = [
+  push_teams = [
     "devops-reviewers"
   ]
 
