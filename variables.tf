@@ -204,19 +204,19 @@ variable "pages_cname" {
 }
 
 variable "advanced_security_enabled" {
-  description = "Whether or not advanced security features are enabled on the repository."
+  description = "Whether or not advanced security features are enabled on the repository. This setting has no effect in public repositories which has this feature enabled by default."
   type        = bool
   default     = true
 }
 
 variable "secret_scanning_enabled" {
-  description = "Whether or not secret scanning is enabled on the repository."
+  description = "Whether or not secret scanning is enabled on the repository. This setting has no effect in public repositories which has this feature enabled by default."
   type        = bool
   default     = true
 }
 
 variable "secret_scanning_push_protection_enabled" {
-  description = "Whether or not secret scanning push protection is enabled on the repository."
+  description = "Whether or not secret scanning push protection is enabled on the repository. This setting has no effect in public repositories which has this feature enabled by default."
   type        = bool
   default     = true
 }

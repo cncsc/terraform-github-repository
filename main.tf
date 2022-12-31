@@ -20,12 +20,15 @@ terraform {
 resource "github_repository" "repo" {
   name         = var.name
   description  = var.description
-  visibility   = var.visibility
   homepage_url = var.homepage_url
   topics       = var.topics
   is_template  = var.is_template
   archived     = var.archived
   auto_init    = var.auto_init
+
+  # The visibility variable defaults to private, but there are valid use cases for public repos.
+  # tfsec:ignore:github-repositories-private
+  visibility = var.visibility
 
   dynamic "template" {
     for_each = var.template_owner != null && var.template_repository != null ? [1] : []
@@ -48,7 +51,9 @@ resource "github_repository" "repo" {
   }
 
   dynamic "security_and_analysis" {
-    for_each = var.advanced_security_enabled || var.secret_scanning_enabled || var.secret_scanning_push_protection_enabled ? [1] : []
+    // Advanced security is automatically enabled for public repositories
+    // This block is redundant (and potentially misleading) for public repositories.
+    for_each = var.visibility != "public" && (var.advanced_security_enabled || var.secret_scanning_enabled || var.secret_scanning_push_protection_enabled) ? [1] : []
 
     content {
       advanced_security {
