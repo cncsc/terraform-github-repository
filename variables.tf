@@ -91,7 +91,7 @@ variable "merge_commit_title" {
 variable "merge_commit_message" {
   description = "The default merge commit message. One of `PR_BODY`, `PR_TITLE`, or `BLANK`."
   type        = string
-  default     = "PR_TITLE"
+  default     = "PR_BODY"
 }
 
 variable "allow_squash_merge" {
