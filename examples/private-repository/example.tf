@@ -16,7 +16,7 @@ provider "github" {
 module "github_repository" {
   source = "../../"
 
-  name        = "terratest-example-repository"
+  name        = "terratest-example-private-repository"
   description = "An example repository used for testing Terraform-based deployments of a GitHub repository."
 
   pull_teams = [
