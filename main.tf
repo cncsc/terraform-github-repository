@@ -101,6 +101,27 @@ resource "github_branch_default" "default" {
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
+# CONFIGURE PROTECTION FOR THE DEFAULT BRANCH
+# ---------------------------------------------------------------------------------------------------------------------
+
+module "default_branch_protection" {
+  source = "./modules/branch-protection"
+
+  repository_id = github_repository.repo.id
+  pattern       = var.default_branch
+
+  enforce_admins                  = var.branch_protection_enforce_admins
+  required_status_checks          = var.branch_protection_required_status_checks
+  strict                          = var.branch_protection_strict
+  dismiss_stale_reviews           = var.dismiss_stale_reviews
+  require_code_owner_reviews      = var.require_code_owner_reviews
+  require_signed_commits          = var.require_signed_commits
+  push_restrictions               = var.push_restrictions
+  review_dismissal_restrictions   = var.review_dismissal_restrictions
+  required_approving_review_count = var.required_approving_review_count
+}
+
+# ---------------------------------------------------------------------------------------------------------------------
 # GRANT READ (PULL) ACCESS TO TEAMS
 # ---------------------------------------------------------------------------------------------------------------------
 
