@@ -52,11 +52,48 @@ variable "require_signed_commits" {
   default     = true
 }
 
+variable "require_linear_history" {
+  description = "Setting this to `true` enforces a linear commit Git history, which prevents anyone from pushing merge commits to a branch."
+  type        = bool
+  default     = false
+}
+
+variable "require_conversation_resolution" {
+  description = "Setting this to `true` requires all conversations on code must be resolved before a pull request can be merged."
+  type        = bool
+  default     = true
+}
+
 variable "push_restrictions" {
   description = "A list of actor IDs that are explicitly permitted to push to the branch. Admins have this capability if `enforce_admins` is false."
   type        = set(string)
   default     = []
 }
+
+variable "allows_deletions" {
+  description = "Setting this to `true` allows the branch to be deleted."
+  type        = bool
+  default     = false
+}
+
+variable "blocks_creations" {
+  description = "Setting this to `true` will prevent creation of the branch."
+  type        = bool
+  default     = false
+}
+
+variable "allows_force_pushes" {
+  description = "Setting this to `true` allows the branch to accept for pushes."
+  type        = bool
+  default     = true
+}
+
+variable "lock_branch" {
+  description = "Setting this to `true` will make the branch read-only and prevent any pushes to it."
+  type        = bool
+  default     = false
+}
+
 
 variable "review_dismissal_restrictions" {
   description = "The list of actor IDs with dismissal access."
@@ -68,4 +105,16 @@ variable "required_approving_review_count" {
   description = "The number of approvals required to satisfy branch protection requirements. This must be a number between 1 and 6."
   type        = number
   default     = 1
+}
+
+variable "pull_request_bypassers" {
+  description = "A list of actor names or IDs that are allowed to bypass pull request requirements. Actor names must either begin with a `/` for users or the organization name followed by a `/` for teams."
+  type        = set(string)
+  default     = []
+}
+
+variable "require_last_push_approval" {
+  description = "Require that the most recent push must be approved by someone other than the last pusher. Defaults to `false`."
+  type        = bool
+  default     = false
 }
